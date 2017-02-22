@@ -41,7 +41,7 @@
              'background-color' : '#2c3238'
     });
 
-    $( '.app-title' ).text( lang.appTitle );
+    //$( '.app-title' ).text( lang.appTitle );
     $( '.content-subject-text input' ).attr( 'placeholder' , lang.typehere);
     $( '.content-description-text' ).attr( 'placeholder' , lang.typehere);
     $( '.contact-info' ).text( lang.contactInfo );
