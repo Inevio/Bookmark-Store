@@ -1,0 +1,79 @@
+
+{
+
+    "name" : {
+
+        "main" : "Bookmark Store",
+        "en"   : "Bookmark Store",
+        "es"   : "Tienda de Marcadores"
+
+    },
+
+    "version" : "1.0",
+    "stage"   : "beta",
+    "api"     : "a100d2",
+
+    "language" : {
+
+        "default" : "en-en",
+        "list"    : [ "en-en" ]
+
+    },
+
+    "device" : {
+
+        "desktop" : {
+
+            "primary" : "main",
+            "service" : [],
+            "common"  : {
+
+                "css"    : [],
+                "script" : [],
+                "start"  : []
+
+            },
+
+            "view" : {
+
+                "main" : {
+
+                    "template" : "main.html",
+
+                    "maxizable" : true,
+                    "resizable" : true,
+
+                    "width"  : {
+
+                        "default" : 565,
+                        "min"     : 300,
+                        "max"     : 0
+
+                    },
+
+                    "height" : {
+
+                        "default" : 500,
+                        "min"     : 500,
+                        "max"     : 0
+
+                    },
+
+                    "css"    : ["style.css"],
+                    "script" : ["script.js"]
+
+                }
+
+            }
+
+        }
+
+    },
+
+    "permission" : {
+
+        "feedback" : true
+
+    }
+
+}

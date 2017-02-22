@@ -1,0 +1,94 @@
+
+*{
+  font-family: 'Lato';
+}
+
+.ui-input{
+  float: left;
+}
+
+.ui-input input{
+  line-height: 11px;
+}
+
+.active.ui-input input{
+  box-shadow: none;
+}
+
+.ui-window{
+  width: 100%;
+  height: 100%;
+}
+
+.ui-content {
+  background-color: #f7f8fa;
+}
+
+.app-content{
+  float: left;
+  width: 100%;
+  height: ~'calc(100% - 41px)';
+}
+
+.content-subject-text{
+  float: left;
+  width: ~'calc(100% - 32px)';
+  padding: 6px 15px;
+  line-height: 15px;
+  border-top: none;
+  border-radius: 0;
+}
+
+.ui-elements{
+  float: left;
+  width: 100%;
+  height: ~'calc(100% - 56px)';
+  padding-top: 15px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.bookmark-card{
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  background-color: #FFF;
+  border-radius: 4px;
+}
+
+.bookmark-logo{
+  float: left;
+  width: 100%;
+  height: 70px;
+}
+
+.bookmark-name{
+  float: left;
+  width: 100%;
+  height: 30px;
+}
+
+.bookmark-button{
+  margin: 8px 25px;
+}
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #889399 !important;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  opacity:  1;
+  color: #889399 !important;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  opacity:  1;
+  color: #889399 !important;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #889399 !important;
+}
