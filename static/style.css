@@ -18,10 +18,12 @@
   border-radius: 3px;
   border: none;
   box-shadow: none;
+  opacity: 0.7;
 }
 
 .ui-header .ui-header-buttons .ui-minimize:hover, .ui-header .ui-header-buttons .ui-maximize:hover, .ui-header .ui-header-buttons .ui-close:hover{
   background-color: #f0f0f0;
+  opacity: 1;
 }
 
 .ui-minimize i{
@@ -85,9 +87,10 @@
 .ui-header-brand span{
   float: left;
   margin-left: 14px;
-  margin-top: 5px;
+  margin-top: 1px;
   font-size: 21px;
   color: #252525;
+  font-weight: bold;
 }
 
 .ui-header-bottom{
@@ -117,7 +120,7 @@
 }
 
 .bookmark-tabs article{
-  padding: 16px 0;
+  padding: 15px 0 16px;
   border-bottom: 2px solid transparent;
   font-size: 17px;
   font-weight: bold;
@@ -133,13 +136,17 @@
   float: right;
   width: 270px;
   height: 36px;
-  margin-right: 14px;
-  margin-top: 5px;
-  margin-bottom: 9px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 7px;
   padding: 0;
   border-radius: 6px;
-  border: none;
   background-color: #f0f0f0;
+  border: 2px solid transparent;
+}
+
+.bookmark-finder.active{
+  border: 2px solid #0071f6;
 }
 
 .bookmark-finder figure.lens{
@@ -177,6 +184,11 @@
   width: 14px;
   height: 14px;
   margin: 11px 10px;
+  opacity: 0.7;
+}
+
+.bookmark-finder figure.remove:hover{
+  opacity: 1;
 }
 
 .bookmark-finder figure.remove i {
@@ -207,7 +219,7 @@
   width: 130px;
   height: 171px;
   padding: 7px 6px 6px 6px;
-  margin: 7px;
+  margin: 7px 7px 10px;
   border-radius: 6px;
   background-color: #FFF;
   box-shadow: 0 1px 3px rgba(0,1,1,.1), inset 0 1px rgba(255,255,255,.1);
@@ -244,6 +256,56 @@
   font-size: 13px;
   font-weight: bold;
   color: #fff;
+  box-sizing: border-box;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookmark-button:hover{
+  background-color: #006ae7;
+}
+
+.bookmark-button:active{
+  background-color: #0067e0;
+}
+
+.bookmark-card.installed .bookmark-button{
+  background-color: #f0f0f0;
+  color: #545f65;
+  padding-right: 7px;
+}
+
+.bookmark-card.installed i{
+  width: 13px;
+  height: 10px;
+  margin-right: 12px;
+  display: block;
+  background-image: url('@static/sprite.png');
+  background-position: -70px -12px;
+  background-size: 109px 23px;
+}
+
+.bookmark-card.installed .bookmark-button span{
+  content: 'Añadida'
+}
+
+.bookmark-card.installed:hover .bookmark-button span{
+  display: none;
+}
+
+.bookmark-card.installed:hover .bookmark-button:after{
+  content: 'Borrar';
+}
+
+.bookmark-card.installed:hover i{
+  width: 12px;
+  margin-right: 13px;
+  background-image: url('@static/sprite.png');
+  background-position: -83px -12px;
+  background-size: 109px 23px;
 }
 
 input::-webkit-input-placeholder { /* WebKit, Blink, Edge */

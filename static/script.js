@@ -1,7 +1,25 @@
 
     var win = $( this );
 
-    //$( '.content-subject-text input' ).focus();
+    $( '.bookmark-finder input' ).focus( function(){
+        $( '.bookmark-finder' ).addClass( 'active' );
+    });
+
+    $( '.bookmark-finder input' ).blur( function(){
+        $( '.bookmark-finder' ).removeClass( 'active' );
+    });
+
+    $( '.bookmark-finder' ).mousedown( function(){
+        $( '.bookmark-finder' ).addClass( 'active' );
+    });
+
+    $( '.bookmark-finder' ).click( function(){
+        $( '.bookmark-finder input' ).focus();
+    });
+
+    /*
+
+    $( '.content-subject-text input' ).focus();
 
     win.on( 'click', '.content-button', function(){
 
@@ -41,15 +59,13 @@
              'background-color' : '#2c3238'
     });
 
-    //$( '.app-title' ).text( lang.appTitle );
+    $( '.app-title' ).text( lang.appTitle );
     $( '.content-subject-text input' ).attr( 'placeholder' , lang.typehere);
     $( '.content-description-text' ).attr( 'placeholder' , lang.typehere);
     $( '.contact-info' ).text( lang.contactInfo );
     $( '.contact-subject' ).text( lang.contactSubject );
     $( '.contact-description' ).text( lang.contactDescription );
     $( '.content-button span' ).text( lang.contactSend );
-
-    /*
 
     searchWorldCard.on( 'input' , function(){
 
