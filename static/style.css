@@ -4,6 +4,10 @@
   letter-spacing: 0.02em;
 }
 
+button{
+  outline: none !important;
+}
+
 .ui-header-buttons{
   padding-top: 5px;
   padding-right: 5px;
