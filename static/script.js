@@ -18,6 +18,16 @@ win.on( 'focus', '.bookmark-finder input', function(){
 
 .on( 'click', '.bookmark-finder', function(){
   $( '.bookmark-finder input' ).focus();
+})
+
+.on( 'click', '.appDom button', function(){
+
+  if( $(this).parent().hasClass('installed') ){
+    removeApp();
+  }else{
+    addApp();
+  }
+
 });
 
 
