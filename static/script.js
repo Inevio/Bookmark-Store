@@ -1,4 +1,3 @@
-
 var win = $( this );
 var bookmarkFinder = $( '.bookmark-finder' );
 var appPrototype = $('.bookmark-card.wz-prototype');
@@ -27,6 +26,20 @@ win.on( 'focus', '.bookmark-finder input', function(){
   }else{
     addApp();
   }
+
+})
+
+.on( 'click', '.all-apps:not(.selected)', function(){
+
+  $('.bookmark-tabs .selected').removeClass('selected');
+  $(this).addClass('selected');
+
+})
+
+.on( 'click', '.installed-apps:not(.selected)', function(){
+
+  $('.bookmark-tabs .selected').removeClass('selected');
+  $(this).addClass('selected');
 
 });
 
