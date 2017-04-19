@@ -48,6 +48,7 @@ var addApp = function( appDom ){
 
   var apiApp = appDom.data('app');
 
+  console.log('añado');
   apiApp.purchase(function(){
 
     console.log(arguments);
@@ -102,6 +103,7 @@ var orderAppList = function( list ){}
 var removeApp = function( appDom ){
 
   var apiApp = appDom.data('app');
+  console.log('borro');
 
   apiApp.uninstall(function(){
 
