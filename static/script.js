@@ -22,9 +22,9 @@ win.on( 'focus', '.bookmark-finder input', function(){
 .on( 'click', '.appDom button', function(){
 
   if( $(this).parent().hasClass('installed') ){
-    removeApp();
+    removeApp( $(this).parent() );
   }else{
-    addApp();
+    addApp( $(this).parent() );
   }
 
 })
@@ -43,37 +43,61 @@ win.on( 'focus', '.bookmark-finder input', function(){
 
 });
 
-
 //FUNCIONES
-var addApp = function( id ){}
+var addApp = function( appDom ){
+
+  var apiApp = appDom.data('app');
+
+}
 
 var loadAppList = function(){
 
   var appList = [];
+  var categoryId = 2; //bookmarks
 
-  for( var i = 0; i < 50; i++ ){
+  api.store.listApps( categoryId, function( error, list ){
 
-    var app = appPrototype.clone();
+    console.log(arguments);
 
-    app
-    .removeClass( 'wz-prototype' )
-    .addClass( 'appDom' );
-    //.addClass( 'appDom-' + app.id );
+    if( error ){
+      alert(error);
+      return;
+    }
 
-    app.find( '.bookmark-name' ).text( 'Files' );
-    app.find( '.bookmark-button span' ).text( lang.addApp );
+    list.forEach( function( storeApp ){
 
-    appList.push( app );
+      var app = appPrototype.clone();
 
-  }
+      console.log(storeApp);
+      app
+      .removeClass( 'wz-prototype' )
+      .addClass( 'appDom-' + storeApp.id )
+      .data( 'app', storeApp );
 
-  showListDom( appList );
+      if( storeApp.installed ){
+        app.addClass( 'installed' );
+      }
+
+      app.find( '.bookmark-name' ).text( storeApp.name );
+      app.find( '.bookmark-button span' ).text( lang.addApp );
+
+      appList.push( app );
+
+    })
+
+    showListDom( appList );
+
+  });
 
 }
 
 var orderAppList = function( list ){}
 
-var removeApp = function( id ){}
+var removeApp = function( appDom ){
+
+  var apiApp = appDom.data('app');
+
+}
 
 var showListDom = function( list ){
   $( '.ui-elements' ).append( list );

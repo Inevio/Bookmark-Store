@@ -72,7 +72,8 @@
 
     "permission" : {
 
-        "feedback" : true
+        "feedback" : true,
+        "store" : true
 
     }
 
