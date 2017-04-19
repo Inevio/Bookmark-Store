@@ -48,6 +48,13 @@ var addApp = function( appDom ){
 
   var apiApp = appDom.data('app');
 
+  apiApp.purchase(function(){
+
+    console.log(arguments);
+    //apiApp.install
+
+  });
+
 }
 
 var loadAppList = function(){
@@ -57,8 +64,6 @@ var loadAppList = function(){
 
   api.store.listApps( categoryId, function( error, list ){
 
-    console.log(arguments);
-
     if( error ){
       alert(error);
       return;
@@ -67,8 +72,8 @@ var loadAppList = function(){
     list.forEach( function( storeApp ){
 
       var app = appPrototype.clone();
-
       console.log(storeApp);
+
       app
       .removeClass( 'wz-prototype' )
       .addClass( 'appDom-' + storeApp.id )
@@ -80,6 +85,7 @@ var loadAppList = function(){
 
       app.find( '.bookmark-name' ).text( storeApp.name );
       app.find( '.bookmark-button span' ).text( lang.addApp );
+      app.find( '.bookmark-logo' ).css('background-image', 'url("https://static.horbito.com/app/' + storeApp.id + '/launchpad.png")');
 
       appList.push( app );
 
@@ -96,6 +102,13 @@ var orderAppList = function( list ){}
 var removeApp = function( appDom ){
 
   var apiApp = appDom.data('app');
+
+  apiApp.uninstall(function(){
+
+    console.log(arguments);
+    //apiApp.install
+
+  });
 
 }
 
