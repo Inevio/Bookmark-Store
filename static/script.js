@@ -49,7 +49,7 @@ var addApp = function( appDom ){
   var apiApp = appDom.data('app');
 
   console.log('añado');
-  apiApp.purchase(function(){
+  apiApp.install(function(){
 
     console.log(arguments);
     //apiApp.install
