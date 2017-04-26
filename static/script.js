@@ -121,6 +121,8 @@ var loadAppList = function(){
       return;
     }
 
+    list = orderAppList(list);
+
     list.forEach( function( storeApp ){
 
       var app = appPrototype.clone();
@@ -149,7 +151,20 @@ var loadAppList = function(){
 
 }
 
-var orderAppList = function( list ){}
+var orderAppList = function( list ){
+
+  return list.sort(function(a, b){
+
+   var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+   if (nameA < nameB) //sort string ascending
+    return -1;
+   if (nameA > nameB)
+    return 1;
+   return 0; //default return value (no sorting)
+
+  });
+
+}
 
 var removeApp = function( appDom ){
 
