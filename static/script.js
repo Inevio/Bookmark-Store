@@ -33,6 +33,7 @@ win.on( 'focus', '.bookmark-finder input', function(){
 
   $('.bookmark-tabs .selected').removeClass('selected');
   $(this).addClass('selected');
+  $('.ui-elements').removeClass('only-installed');
 
 })
 
@@ -40,6 +41,7 @@ win.on( 'focus', '.bookmark-finder input', function(){
 
   $('.bookmark-tabs .selected').removeClass('selected');
   $(this).addClass('selected');
+  $('.ui-elements').addClass('only-installed');
 
 });
 
