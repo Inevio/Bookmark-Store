@@ -43,6 +43,10 @@ win.on( 'focus', '.bookmark-finder input', function(){
   $(this).addClass('selected');
   $('.ui-elements').addClass('only-installed');
 
+})
+
+.on( 'input', '.ui-header-bottom input', function(){
+  filterApps( $( this ).val() );
 });
 
 api.store.on( 'appInstalled', function(store){
@@ -84,6 +88,23 @@ var addApp = function( appDom ){
     });
 
   }
+
+}
+
+var filterApps = function( filter ){
+
+  var apps;
+
+  if( $('.ui-elements').hasClass('only-installed') ){
+    apps = $( '.appDom.installed' );
+  }else{
+    apps = $( '.appDom' );
+  }
+
+  apps.show();
+  var appsToShow = apps.filter( startsWithApps( filter ) );
+  var appsNotToShow = apps.not( appsToShow );
+  appsNotToShow.hide();
 
 }
 
@@ -151,6 +172,16 @@ var startApp = function(){
 
   loadAppList();
   translateUI();
+
+}
+
+var startsWithApps = function( wordToCompare ){
+
+  return function( index , element ) {
+
+    return $( element ).find( '.bookmark-name' ).text().toLowerCase().indexOf( wordToCompare.toLowerCase() ) !== -1;
+
+  }
 
 }
 
