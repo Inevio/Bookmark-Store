@@ -53,7 +53,7 @@ button{
   margin-top: 3px;
   font-size: 21px;
   color: #252525;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .ui-header-bottom{
@@ -87,7 +87,11 @@ button{
   border-bottom: 2px solid transparent;
   font-size: 17px;
   font-weight: bold;
-  color: #545f65;
+  color: #717171;
+}
+
+.bookmark-tabs:hover article{
+  color: #252525;
 }
 
 .bookmark-tabs .selected article{
@@ -204,7 +208,6 @@ button{
   width: 100%;
   height: 90px;
   border-radius: 6px;
-  background-color: #00c05d;
   background-size: 130px 90px;
 }
 
@@ -236,11 +239,16 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.bookmark-button span{
+  cursor: pointer;
 }
 
 .bookmark-button-uninstall{
   background-color: #f0f0f0;
-  color: #545f65;
+  color: #717171;
   position: relative;
   display: none;
 }
@@ -270,6 +278,8 @@ button{
   background-size: 109px 23px;
   position: absolute;
   left: 20px;
+  margin-top: 1px;
+  cursor: pointer;
 }
 
 .bookmark-card.installed .bookmark-button-uninstall .delete{

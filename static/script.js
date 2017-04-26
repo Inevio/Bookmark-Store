@@ -69,11 +69,12 @@ api.store.on( 'appInstalled', function(store){
 var addApp = function( appDom ){
 
   var apiApp = appDom.data('app');
-
+  console.log('añado', apiApp);
 
   if( !apiApp.purchased ){
 
     apiApp.purchase(function(){
+      console.log(arguments);
 
       apiApp.install(function(){
         console.log(arguments);
@@ -153,7 +154,7 @@ var orderAppList = function( list ){}
 var removeApp = function( appDom ){
 
   var apiApp = appDom.data('app');
-  console.log('borro');
+  console.log('borro', apiApp);
 
   apiApp.uninstall(function(){
 
