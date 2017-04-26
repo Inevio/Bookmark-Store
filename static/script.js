@@ -48,13 +48,24 @@ var addApp = function( appDom ){
 
   var apiApp = appDom.data('app');
 
-  console.log('añado');
-  apiApp.install(function(){
 
-    console.log(arguments);
-    //apiApp.install
+  if( !apiApp.purchased ){
 
-  });
+    apiApp.purchase(function(){
+
+      apiApp.install(function(){
+        console.log(arguments);
+      });
+
+    });
+
+  }else{
+
+    apiApp.install(function(){
+      console.log(arguments);
+    });
+
+  }
 
 }
 
@@ -120,10 +131,11 @@ var showListDom = function( list ){
   $( '.ui-elements' ).append( list );
 }
 
-/*api.store.on( 'appInstalled', function(store){
+api.store.on( 'appInstalled', function(store){
 
   console.log('evento install');
   console.log(store);
+  $('.appDom-' + store.id).addClass('installed').data('app', store);
 
 })
 
@@ -131,7 +143,8 @@ var showListDom = function( list ){
 
   console.log('evento uninstall');
   console.log(store);
+  $('.appDom-' + store.id).removeClass('installed').data('app', store);
 
-});*/
+});
 
 loadAppList();
