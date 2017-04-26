@@ -3,6 +3,9 @@
 
     "appTitle" : "Tienda de Marcadores",
     "addApp" : "Añadir",
-    "removeApp" : "Borrar"
+    "addedApp" : "Añadida",
+    "removeApp" : "Borrar",
+    "allApps" : "Todas las apps",
+    "installedApps" : "Instaladas"
 
 }

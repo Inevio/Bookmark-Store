@@ -45,6 +45,22 @@ win.on( 'focus', '.bookmark-finder input', function(){
 
 });
 
+api.store.on( 'appInstalled', function(store){
+
+  console.log('evento install');
+  console.log(store);
+  $('.appDom-' + store.id).addClass('installed').data('app', store);
+
+})
+
+.on( 'appUninstalled', function(store){
+
+  console.log('evento uninstall');
+  console.log(store);
+  $('.appDom-' + store.id).removeClass('installed').data('app', store);
+
+});
+
 //FUNCIONES
 var addApp = function( appDom ){
 
@@ -83,12 +99,9 @@ var loadAppList = function(){
       return;
     }
 
-    console.log(list);
-
     list.forEach( function( storeApp ){
 
       var app = appPrototype.clone();
-      console.log(storeApp);
 
       app
       .removeClass( 'wz-prototype' )
@@ -108,6 +121,7 @@ var loadAppList = function(){
     })
 
     showListDom( appList );
+    translateApps();
 
   });
 
@@ -133,20 +147,26 @@ var showListDom = function( list ){
   $( '.ui-elements' ).append( list );
 }
 
-api.store.on( 'appInstalled', function(store){
+var startApp = function(){
 
-  console.log('evento install');
-  console.log(store);
-  $('.appDom-' + store.id).addClass('installed').data('app', store);
+  loadAppList();
+  translateUI();
 
-})
+}
 
-.on( 'appUninstalled', function(store){
+var translateApps = function(){
 
-  console.log('evento uninstall');
-  console.log(store);
-  $('.appDom-' + store.id).removeClass('installed').data('app', store);
+  $('.bookmark-button-uninstall .added').text( lang.addedApp );
+  $('.bookmark-button-uninstall .delete').text( lang.removeApp );
 
-});
+}
 
-loadAppList();
+var translateUI = function(){
+
+  $('.all-apps span').text( lang.allApps );
+  $('.installed-apps span').text( lang.installedApps );
+  $('.app-title').text( lang.appTitle );
+
+}
+
+startApp();

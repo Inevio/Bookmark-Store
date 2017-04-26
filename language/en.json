@@ -3,6 +3,9 @@
 
     "appTitle" : "Bookmark Store",
     "addApp" : "Add",
-    "removeApp" : "Remove"
+    "addedApp" : "Added",
+    "removeApp" : "Remove",
+    "allApps" : "All apps",
+    "installedApps" : "Installed"
 
 }

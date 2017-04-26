@@ -232,52 +232,60 @@ button{
   font-weight: bold;
   color: #fff;
   box-sizing: border-box;
-
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.bookmark-button:hover{
+.bookmark-button-uninstall{
+  background-color: #f0f0f0;
+  color: #545f65;
+  position: relative;
+  display: none;
+}
+
+.bookmark-button-install:hover{
   background-color: #006ae7;
 }
 
-.bookmark-button:active{
+.bookmark-button-install:active{
   background-color: #0067e0;
 }
 
-.bookmark-card.installed .bookmark-button{
-  background-color: #f0f0f0;
-  color: #545f65;
-  padding-right: 7px;
+.bookmark-card.installed .bookmark-button-uninstall{
+  display: block;
+}
+
+.bookmark-card.installed .bookmark-button-install{
+  display: none;
 }
 
 .bookmark-card.installed i{
   width: 13px;
   height: 10px;
-  margin-right: 12px;
-  display: block;
+  display: inline-block;
   background-image: url('@static/sprite.png');
   background-position: -70px -12px;
   background-size: 109px 23px;
+  position: absolute;
+  left: 20px;
 }
 
-.bookmark-card.installed .bookmark-button span{
-  content: 'Añadida'
-}
-
-.bookmark-card.installed:hover .bookmark-button span{
+.bookmark-card.installed .bookmark-button-uninstall .delete{
   display: none;
 }
 
-.bookmark-card.installed:hover .bookmark-button:after{
-  content: 'Borrar';
+.bookmark-card.installed:hover .bookmark-button-uninstall .added{
+  display: none;
+}
+
+.bookmark-card.installed:hover .bookmark-button-uninstall .delete{
+  display: block;
 }
 
 .bookmark-card.installed:hover i{
   width: 12px;
-  margin-right: 13px;
   background-image: url('@static/sprite.png');
   background-position: -83px -12px;
   background-size: 109px 23px;
