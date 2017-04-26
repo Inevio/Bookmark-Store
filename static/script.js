@@ -34,6 +34,7 @@ win.on( 'focus', '.bookmark-finder input', function(){
   $('.bookmark-tabs .selected').removeClass('selected');
   $(this).addClass('selected');
   $('.ui-elements').removeClass('only-installed');
+  filterApps( $('.ui-header-bottom input').val() );
 
 })
 
@@ -42,6 +43,14 @@ win.on( 'focus', '.bookmark-finder input', function(){
   $('.bookmark-tabs .selected').removeClass('selected');
   $(this).addClass('selected');
   $('.ui-elements').addClass('only-installed');
+  filterApps( $('.ui-header-bottom input').val() );
+
+})
+
+.on( 'click', '.bookmark-finder .remove', function(){
+
+  $('.ui-header-bottom input').val('');
+  filterApps('');
 
 })
 
@@ -102,10 +111,10 @@ var filterApps = function( filter ){
     apps = $( '.appDom' );
   }
 
-  apps.show();
+  apps.removeClass('hidden');
   var appsToShow = apps.filter( startsWithApps( filter ) );
   var appsNotToShow = apps.not( appsToShow );
-  appsNotToShow.hide();
+  appsNotToShow.addClass('hidden');
 
 }
 

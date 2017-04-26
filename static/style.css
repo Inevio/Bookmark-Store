@@ -199,6 +199,10 @@ button{
   display: block;
 }
 
+.ui-content .ui-elements .bookmark-card.hidden{
+  display: none;
+}
+
 .bookmark-card:last-of-type{
   margin-bottom: 25px;
 }
