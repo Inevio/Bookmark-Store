@@ -6,6 +6,7 @@
     "addedApp" : "Added",
     "removeApp" : "Remove",
     "allApps" : "All apps",
-    "installedApps" : "Installed"
+    "installedApps" : "Installed",
+    "search" : "Search"
 
 }

@@ -6,6 +6,8 @@
     "addedApp" : "Añadida",
     "removeApp" : "Borrar",
     "allApps" : "Todas las apps",
-    "installedApps" : "Instaladas"
+    "installedApps" : "Instaladas",
+    "search" : "Buscar"
+
 
 }

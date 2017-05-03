@@ -222,6 +222,7 @@ var translateUI = function(){
   $('.all-apps span').text( lang.allApps );
   $('.installed-apps span').text( lang.installedApps );
   $('.app-title').text( lang.appTitle );
+  $('.ui-header-bottom input').attr('placeholder', lang.search);
 
 }
 
