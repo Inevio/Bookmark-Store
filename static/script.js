@@ -1,4 +1,5 @@
 var win = $( this );
+var app = $( '.ui-window' );
 var bookmarkFinder = $( '.bookmark-finder' );
 var appPrototype = $('.bookmark-card.wz-prototype');
 
@@ -52,6 +53,26 @@ win.on( 'focus', '.bookmark-finder input', function(){
   $('.ui-header-bottom input').val('');
   filterApps('');
 
+})
+
+.on( 'click', '.add-own-apps a', function(){
+  app.addClass( 'addNewApp' );
+})
+
+.on( 'click', '.add-apps', function(){
+  app.removeClass( 'addNewApp' );
+})
+
+.on( 'click', '.add-apps-content', function(e){
+  e.stopPropagation();
+})
+
+.on( 'click', '.add-apps-close', function(){
+  app.removeClass( 'addNewApp' );
+})
+
+.on( 'click', '.add-apps-link', function(){
+  api.app.openApp( 312 );
 })
 
 .on( 'input', '.ui-header-bottom input', function(){
@@ -115,6 +136,14 @@ var filterApps = function( filter ){
   var appsToShow = apps.filter( startsWithApps( filter ) );
   var appsNotToShow = apps.not( appsToShow );
   appsNotToShow.addClass('hidden');
+
+  console.log( appsToShow )
+  console.log( appsToShow.length )
+  if( appsToShow.length ){
+    app.removeClass( 'noAppResults' )
+  }else{
+    app.addClass( 'noAppResults' )
+  }
 
 }
 

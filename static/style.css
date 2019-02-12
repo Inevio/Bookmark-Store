@@ -69,7 +69,7 @@ button{
 .app-content{
   float: left;
   width: 100%;
-  height: ~'calc(100% - 41px)';
+  height: ~'calc(100% - 101px)';
 }
 
 .bookmark-tabs{
@@ -170,7 +170,8 @@ button{
 .ui-elements{
   float: left;
   width: 100%;
-  height: ~'calc(100% - 75px)';
+  height: 100%;
+  box-sizing: border-box;
   padding-top: 15px;
   display: flex;
   flex-direction: row;
@@ -178,6 +179,10 @@ button{
   justify-content: center;
   align-items: flex-start;
   align-content: flex-start;
+}
+
+.noAppResults .ui-elements{
+  display: none;
 }
 
 .bookmark-card{
@@ -320,4 +325,175 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 input:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #889399 !important;
+}
+
+/* Add your own apps popup code */
+
+.add-apps{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba( 0, 0, 0, 0.3 );
+  display: none;
+}
+
+.addNewApp .add-apps{
+  display: block;
+}
+
+.add-apps *{
+  font-family: 'Akademie';
+}
+
+.add-apps-content{
+  width: 462px;
+  height: 500px;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -250px 0 0 -231px;
+}
+
+.add-apps-close{
+  float: right;
+  width: 32px;
+  height: 32px;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.add-apps-close:hover{
+  background: rgba( 0, 0, 0, 0.1 );
+  opacity: 1;
+}
+
+.add-apps-close i{
+  width: 16px;
+  height: 16px;
+  background-image: url('@static/cross.png');
+  margin: 8px;
+  display: block;
+}
+
+.add-apps-title{
+  float: left;
+  width: 100%;
+  font-size: 45px;
+  font-weight: bold;
+  color: rgb( 37, 37, 37 );
+}
+
+.add-apps-description{
+  float: left;
+  width: 100%;
+  margin-top: 16px;
+  font-size: 19px;
+  line-height: 28px;
+  color: rgb( 154, 154, 162 );
+}
+
+.add-apps-link{
+  float: left;
+  font-size: 19px;
+  color: rgb( 0, 113, 246 );
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.add-apps-link:hover{
+  text-decoration: underline;
+}
+
+.add-apps-image{
+  float: left;
+  width: 413px;
+  height: 199px;
+  background-image: url('@static/imageLearn.png');
+  margin-top: 30px;
+}
+
+/* Add your own apps icon code */
+
+.add-own-apps .bookmark-logo{
+  background-image: url('@static/addApp.png');
+}
+
+.add-own-apps .bookmark-name{
+  line-height: 19px;
+  margin: 12px 0 16px;
+}
+
+.add-own-apps a{
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb( 0, 113, 246 );
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.add-own-apps a:hover{
+  text-decoration: underline;
+}
+
+/* No results store code */
+
+.no-results{
+  float: left;
+  width: 100%;
+  height: 100%;
+  display: none;
+  text-align: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.noAppResults .no-results{
+  display: block;
+}
+
+.no-results *{
+  font-family: 'Akademie';
+}
+
+.no-results-title{
+  display: inline-block;
+  width: 100%;
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb( 154, 154, 162 );
+  margin-top: 46px;
+}
+
+.no-results-description{
+  display: inline-block;
+  max-width: 450px;
+  font-size: 19px;
+  line-height: 28px;
+  color: rgb( 154, 154, 162 );
+  margin: 10px ~'calc( 50% - 225px ) 0';
+}
+
+.no-results .add-apps-link{
+  display: inline-block;
+  float: none;
+}
+
+.no-results-image{
+  display: inline-block;
+  width: 414px;
+  height: 237px;
+  background-image: url('@static/imageResults.png');
+  margin: 30px ~'calc( 50% - 207px )' 0;
 }
