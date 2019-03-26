@@ -260,7 +260,7 @@ var translateUI = function(){
   $( '.no-results .no-results-description' ).text( lang.dontWorry )
   $( '.no-results .add-apps-link' ).text( lang.vintageBrowser + ' →' )
 
-  $( '.add-apps .add-apps-title' ).text( lang.ownApps )
+  $( '.add-apps .add-apps-title' ).html( lang.ownApps )
   $( '.add-apps .add-apps-description' ).text( lang.createApp )
   $( '.add-apps .add-apps-link' ).text( lang.vintageBrowser + ' →' )
 
