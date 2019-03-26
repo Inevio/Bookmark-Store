@@ -253,6 +253,17 @@ var translateUI = function(){
   $('.app-title').text( lang.appTitle );
   $('.ui-header-bottom input').attr('placeholder', lang.search);
 
+  $( '.add-own-apps .bookmark-name' ).text( lang.addApps )
+  $( '.add-own-apps a' ).text( lang.learnHow + ' →' )
+
+  $( '.no-results .no-results-title' ).text( lang.noResults )
+  $( '.no-results .no-results-description' ).text( lang.dontWorry )
+  $( '.no-results .add-apps-link' ).text( lang.vintageBrowser + ' →' )
+
+  $( '.add-apps .add-apps-title' ).text( lang.ownApps )
+  $( '.add-apps .add-apps-description' ).text( lang.createApp )
+  $( '.add-apps .add-apps-link' ).text( lang.vintageBrowser + ' →' )
+
 }
 
 startApp();

@@ -7,7 +7,14 @@
     "removeApp" : "Borrar",
     "allApps" : "Todas las apps",
     "installedApps" : "Instaladas",
-    "search" : "Buscar"
+    "search" : "Buscar",
 
+    "addApps": "¿Quieres añadir tus propias?",
+    "learnHow": "Añadir",
+    "noResults": "Sin resultados",
+    "dontWorry": "No te preocupes, puedes convertir cualquier página web en una app a través de “Añadir al taskbar” en",
+    "createApp": "Puedes convertir cualquier página web en una app a través de “Añadir al taskbar” en",
+    "vintageBrowser": "Navegador vintage",
+    "ownApps": "Añade tus<br>propias apps"
 
 }
